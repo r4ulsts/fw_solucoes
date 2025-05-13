@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/app_theme.dart';  // Importando o AppTheme
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _passwordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +29,7 @@ class LoginPage extends StatelessWidget {
                   width: size.width * 0.45,
                 ),
                 const SizedBox(height: 32),
+
                 // Título
                 Text(
                   'Bem-vindo à FW Soluções',
@@ -42,15 +50,25 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
 
-                // Senha
+                // Senha com botão de visibilidade
                 TextFormField(
+                  obscureText: !_passwordVisible,
                   decoration: InputDecoration(
                     labelText: 'Senha',
                     prefixIcon: const Icon(Icons.lock),
-                    labelStyle: Theme.of(context).textTheme.bodyLarge, // Usando o estilo do tema para o rótulo
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                    ),
+                    labelStyle: Theme.of(context).textTheme.bodyLarge,
                     border: const OutlineInputBorder(),
                   ),
-                  obscureText: true,
                 ),
                 const SizedBox(height: 24),
 
