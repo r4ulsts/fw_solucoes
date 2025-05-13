@@ -11,7 +11,7 @@ class FWSolucoesApp extends StatelessWidget {
       title: 'FW Soluções',
       theme: AppTheme.lightTheme,
       home: const LoginPage(),
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, 
     );
   }
 }
