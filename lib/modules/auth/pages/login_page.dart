@@ -104,7 +104,6 @@ class _LoginPageState extends State<LoginPage> {
                     'Esqueci minha senha',
                     style: TextStyle(
                       color: Theme.of(context).primaryColor, // Usando a cor primária para o link
-                      decoration: TextDecoration.underline,
                     ),
                   ),
                 ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'modules/auth/pages/login_page.dart';
 import 'core/Theme/app_theme.dart';
+import 'modules/auth/pages/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'FW Soluções',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const LoginPage(),
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system, // Alterna automaticamente!
+      home: const SplashScreen(),
     );
   }
 }
